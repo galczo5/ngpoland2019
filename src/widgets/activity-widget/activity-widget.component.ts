@@ -2,14 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-widget',
-  templateUrl: './activity-widget.component.html',
-  styleUrls: ['./activity-widget.component.css']
+  templateUrl: './activity-widget.component.html'
 })
-export class ActivityWidgetComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
+export class ActivityWidgetComponent {
 
 }
