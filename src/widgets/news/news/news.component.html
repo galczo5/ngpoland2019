@@ -1,0 +1,10 @@
+<div class="alert alert-dismissible alert-info"
+     [class.alert-danger]="news.important">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <h4 class="alert-heading">
+    {{ news.header }}
+  </h4>
+  <p class="mb-0">
+    {{ news.text }}
+  </p>
+</div>
