@@ -15,7 +15,7 @@ install:
 
 script:
   - yarn lint
-  - yarn build -- --prod --base-href "/ngpoland2019/"
+  - yarn build -- --base-href "/ngpoland2019/"
 
 deploy:
   provider: pages
