@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from './http/http-client.service';
-import {Observable, ReplaySubject} from 'rxjs';
+import {Observable, ReplaySubject, interval} from 'rxjs';
 import {News} from './news';
 
 @Injectable({
@@ -13,8 +13,11 @@ export class NewsService {
   constructor(private httpClient: HttpClient) {}
 
   fetchNews(): void {
-    const news = this.httpClient.get('');
-    this.news$.next(news);
+    interval(3000)
+      .subscribe(() => {
+        const news = this.httpClient.get('');
+        this.news$.next(news);
+      });
   }
 
   getNews(): Observable<News[]> {

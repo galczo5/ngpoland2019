@@ -1,1 +1,4 @@
 <app-news *ngFor="let n of news" [news]="n"></app-news>
+<h6 *ngIf="fetchDate" class="text-right text-muted">
+  Last update: {{ fetchDate | date: 'HH:mm:ss' }}
+</h6>

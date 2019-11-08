@@ -17,8 +17,8 @@ import {ActivitiesModule} from './activities/activities.module';
 export class WidgetsModule implements DoBootstrap {
 
   ngDoBootstrap(appRef: ApplicationRef): void {
-    // appRef.bootstrap(NewsWidgetComponent);
-    appRef.bootstrap(ActivityWidgetComponent);
+    appRef.bootstrap(NewsWidgetComponent);
+    // appRef.bootstrap(ActivityWidgetComponent);
   }
 
 }

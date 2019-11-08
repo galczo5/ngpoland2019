@@ -10,11 +10,16 @@ export class NewsListComponent implements OnInit {
 
   news: News[] = [];
 
+  fetchDate: Date;
+
   constructor(private readonly service: NewsService) {}
 
   ngOnInit(): void {
     this.service.getNews()
-      .subscribe(news => this.news = news);
+      .subscribe(news => {
+        this.news = news;
+        this.fetchDate = new Date();
+      });
   }
 
 }
