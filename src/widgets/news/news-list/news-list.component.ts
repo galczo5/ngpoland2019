@@ -10,7 +10,7 @@ export class NewsListComponent implements OnInit {
 
   news: News[] = [];
 
-  fetchDate: Date;
+  fetchDate: Date = new Date();
 
   constructor(private readonly service: NewsService) {}
 
