@@ -1,4 +1,4 @@
-import {enableProdMode, PLATFORM_INITIALIZER, PlatformRef} from '@angular/core';
+import {enableProdMode, PLATFORM_INITIALIZER} from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { environment } from './environments/environment';
 
@@ -11,6 +11,7 @@ import {UserSettingsService} from './platform/user-settings.service';
 import {combineLatest} from 'rxjs';
 
 import './utils';
+import {UserSettingsStoreService} from './platform/user-settings-store.service';
 
 if (environment.production) {
   enableProdMode();
@@ -19,10 +20,13 @@ if (environment.production) {
 const platformRef = platformBrowserDynamic([
   { provide: ApplicationPropertiesService, useClass: ApplicationPropertiesService, deps: [] },
   { provide: UserSettingsService, useClass: UserSettingsService, deps: [] },
+  { provide: UserSettingsStoreService, useClass: UserSettingsStoreService, deps: [] },
   {
     multi: true,
     provide: PLATFORM_INITIALIZER,
-    useFactory: (applicationPropertiesService: ApplicationPropertiesService, settingsService: UserSettingsService) => {
+    useFactory: (applicationPropertiesService: ApplicationPropertiesService,
+                 settingsService: UserSettingsService,
+                 settingsStoreService: UserSettingsStoreService) => {
       return () => {
 
         // Start apps without user settings
@@ -35,11 +39,12 @@ const platformRef = platformBrowserDynamic([
 
         // Start app with user settings
         combineLatest(applicationPropertiesService.get(), settingsService.get())
-          .subscribe(() => {
+          .subscribe(value => {
+            settingsStoreService.setWidget(value[1].enabledWidget);
             platformRef.bootstrapModule(WidgetsModule);
           });
       };
     },
-    deps: [ApplicationPropertiesService, UserSettingsService]
+    deps: [ApplicationPropertiesService, UserSettingsService, UserSettingsStoreService]
   }
 ]);

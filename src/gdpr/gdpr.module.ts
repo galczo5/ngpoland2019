@@ -6,18 +6,18 @@ import {
   ViewContainerRef
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ModalComponent } from './modal/modal.component';
+import {GdprModalComponent} from './modal/gdpr-modal.component';
 
 @NgModule({
   imports: [CommonModule],
-  declarations: [ModalComponent],
-  entryComponents: [ModalComponent],
+  declarations: [GdprModalComponent],
+  entryComponents: [GdprModalComponent],
   providers: [{
     multi: true,
     provide: APP_BOOTSTRAP_LISTENER,
     useFactory: (resolver: ComponentFactoryResolver) => {
       return (cRef: ComponentRef<any>) => {
-        const factory = resolver.resolveComponentFactory(ModalComponent);
+        const factory = resolver.resolveComponentFactory(GdprModalComponent);
         const viewContainerRef = cRef.injector.get(ViewContainerRef);
 
         if (viewContainerRef) {

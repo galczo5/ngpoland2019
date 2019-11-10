@@ -4,16 +4,13 @@ import {Observable, of} from 'rxjs';
 import {delay} from 'rxjs/operators';
 import {Widget} from './widget';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class UserSettingsService {
 
   get(): Observable<UserSettings> {
-    const settings: UserSettings = {
-      enabledWidget: Widget.NEWS
-    };
-
-    return of(settings).pipe(delay(3500));
+    const item = localStorage.getItem('widget');
+    return of({
+      enabledWidget: item === 'activities' ? Widget.ACTIVITIES : Widget.NEWS
+    }).pipe(delay(3500));
   }
 }

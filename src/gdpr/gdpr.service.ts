@@ -1,5 +1,5 @@
 import {ComponentFactoryResolver, Injectable, Injector, ViewContainerRef} from '@angular/core';
-import {ModalComponent} from './modal/modal.component';
+import {GdprModalComponent} from './modal/gdpr-modal.component';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ export class GDPRService {
   constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
 
   open(viewContainerRef: ViewContainerRef): void {
-    const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
+    const factory = this.componentFactoryResolver.resolveComponentFactory(GdprModalComponent);
     viewContainerRef.createComponent(factory);
   }
 }

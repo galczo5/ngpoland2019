@@ -1,4 +1,4 @@
 export enum Widget {
-  ACTIVITIES,
-  NEWS
+  ACTIVITIES = 'activities',
+  NEWS = 'news'
 }
