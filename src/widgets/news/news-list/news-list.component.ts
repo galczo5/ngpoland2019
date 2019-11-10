@@ -15,7 +15,7 @@ export class NewsListComponent implements OnInit {
   constructor(private readonly service: NewsService) {}
 
   ngOnInit(): void {
-    this.service.getNews()
+    this.service.get()
       .subscribe(news => {
         this.news = news;
         this.fetchDate = new Date();

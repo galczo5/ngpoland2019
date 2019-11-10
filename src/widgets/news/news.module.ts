@@ -15,7 +15,7 @@ import {NewsWidgetComponent} from './news-widget/news-widget.component';
       multi: true,
       provide: APP_INITIALIZER,
       useFactory: (service: NewsService) => {
-        return () => service.fetchNews();
+        return () => service.fetch();
       },
       deps: [NewsService]
     }

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from './http/http-client.service';
+import {NewsHttpClient} from './http/http-client.service';
 import {Observable, ReplaySubject, interval} from 'rxjs';
 import {News} from './news';
+import {switchMap} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -10,17 +11,20 @@ export class NewsService {
 
   private news$: ReplaySubject<News[]> = new ReplaySubject<News[]>();
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: NewsHttpClient) {}
 
-  fetchNews(): void {
+  fetch(): void {
     interval(3000)
-      .subscribe(() => {
-        const news = this.httpClient.get('');
+      .pipe(
+        // TODO: ApplicationProperties
+        switchMap(() => this.httpClient.get(''))
+      )
+      .subscribe(news => {
         this.news$.next(news);
       });
   }
 
-  getNews(): Observable<News[]> {
+  get(): Observable<News[]> {
     return this.news$.asObservable();
   }
 

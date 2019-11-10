@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
 import {News} from '../news';
+import {Observable, of} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class HttpClient {
+export class NewsHttpClient {
 
   constructor() { }
 
-  get(url: string): any {
-    const result: News[] = [{
+  get(url: string): Observable<any> {
+    return of([{
         header: 'New Employees!',
         text: 'Please welcome new employees: Anna and John. ' +
           'They will join us as developers in frontend team'
@@ -24,8 +25,6 @@ export class HttpClient {
         header: 'Phone found',
         text: `I've found phone in bathroom. Golden Samsung S7. Alex Smith`
       }
-    ];
-
-    return result;
+    ]);
   }
 }

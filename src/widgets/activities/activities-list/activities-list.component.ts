@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivitiesService} from '../activities.service';
+import {Activity} from '../activity';
 
 @Component({
   selector: 'app-activities-list',
@@ -6,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActivitiesListComponent implements OnInit {
 
-  constructor() { }
+  activities: Activity[] = [];
+  closedActivities: Activity[] = [];
+  fetchDate: Date = new Date();
+
+  constructor(private readonly activitiesService: ActivitiesService) { }
 
   ngOnInit() {
+    this.activitiesService.get()
+      .subscribe(activities => {
+        this.fetchDate = new Date();
+        this.activities = activities;
+        this.activities.sort((a, b) => b.date.getTime() - a.date.getTime());
+
+        this.closedActivities = this.activities.slice(0, 2);
+      });
   }
 
 }
