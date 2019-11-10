@@ -17,7 +17,7 @@ export class ActivitiesHttpClient {
       date: new Date('2019-11-12'),
       header: 'Production release',
       text: 'Production release is prepared to deploy',
-      subtext: 'Author of change: Alexa Smith'
+      subtext: 'Author of change: Alex Smith'
     }, {
       date: new Date('2019-11-14'),
       header: 'Hotfix in progress',

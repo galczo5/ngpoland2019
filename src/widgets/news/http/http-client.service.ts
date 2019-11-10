@@ -24,6 +24,12 @@ export class NewsHttpClient {
       }, {
         header: 'Phone found',
         text: `I've found phone in bathroom. Golden Samsung S7. Alex Smith`
+      }, {
+        header: 'New version of news widget',
+        text: `Version 1.3 was deployed last night`
+      }, {
+        header: 'Ready for party?',
+        text: 'Join us at company party next friday'
       }
     ]);
   }

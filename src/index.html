@@ -7,20 +7,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-<body class="container py-3">
+<body class="container py-3 pb-5">
   <app-header app-name="Header application"></app-header>
   <div class="row mt-3 mb-5">
     <div class="col-8">
       <app-root app-name="Main application"></app-root>
     </div>
     <div class="col">
-      <app-widget app-name="Widget application">
-        <div class="widget-loader">
-          <h4>Loading...</h4>
-        </div>
-      </app-widget>
+      <app-widget app-name="Widget application"></app-widget>
     </div>
   </div>
-  <app-footer app-name="Footer application"></app-footer>
+  <div class="mb-5">
+    <app-footer app-name="Footer application"></app-footer>
+  </div>
 </body>
 </html>

@@ -11,9 +11,6 @@
                   [activity]="activity"
                   [active]="i%2 === 0"></app-activity>
   </div>
-  <h6 *ngIf="fetchDate" class="text-right text-muted mt-3">
-    Last update: {{ fetchDate | date: 'HH:mm:ss' }}
-  </h6>
 </ng-container>
 <div *ngIf="activities.length === 0">
   <div class="alert alert-dismissible alert-secondary">
