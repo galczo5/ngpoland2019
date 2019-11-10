@@ -9,7 +9,8 @@ import {WidgetsModule} from './widgets/widgets.module';
 import {ApplicationPropertiesService} from './platform/application-properties.service';
 import {UserSettingsService} from './platform/user-settings.service';
 import {combineLatest} from 'rxjs';
-import {take} from 'rxjs/operators';
+
+import './utils';
 
 if (environment.production) {
   enableProdMode();
@@ -23,6 +24,8 @@ const platformRef = platformBrowserDynamic([
     provide: PLATFORM_INITIALIZER,
     useFactory: (applicationPropertiesService: ApplicationPropertiesService, settingsService: UserSettingsService) => {
       return () => {
+
+        // Start apps without user settings
         applicationPropertiesService.get()
           .subscribe(() => {
             platformRef.bootstrapModule(AppModule);
@@ -30,6 +33,7 @@ const platformRef = platformBrowserDynamic([
             platformRef.bootstrapModule(FooterModule);
           });
 
+        // Start app with user settings
         combineLatest(applicationPropertiesService.get(), settingsService.get())
           .subscribe(() => {
             platformRef.bootstrapModule(WidgetsModule);
