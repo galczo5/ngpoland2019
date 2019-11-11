@@ -14,7 +14,7 @@ export class NewsService {
   constructor(private httpClient: NewsHttpClient) {}
 
   fetch(): void {
-    interval(3000)
+    interval(2000)
       .pipe(
         // TODO: ApplicationProperties
         switchMap(() => this.httpClient.get(''))

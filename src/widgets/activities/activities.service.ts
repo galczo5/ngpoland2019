@@ -14,7 +14,7 @@ export class ActivitiesService {
   constructor(private readonly httpClient: ActivitiesHttpClient) { }
 
   fetch(): void {
-    interval(3000)
+    interval(2000)
       .pipe(
         switchMap(() => this.httpClient.get(''))
       )

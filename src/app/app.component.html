@@ -13,21 +13,26 @@
   </p>
 </div>
 
-<ul class="list-group">
-  <li *ngFor="let message of messages" class="list-group-item d-flex justify-content-between align-items-center">
-    <div>
-      <strong class="text-info" style="width: 120px; display: inline-block;">{{ message.from }}</strong>
-      <strong>{{ message.subject }}</strong>
-      <span class="text-muted">
+<ng-container *ngIf="messages.length > 0">
+  <ul class="list-group">
+    <li *ngFor="let message of messages" class="list-group-item d-flex justify-content-between align-items-center">
+      <div>
+        <strong class="text-info" style="width: 120px; display: inline-block;">{{ message.from }}</strong>
+        <strong>{{ message.subject }}</strong>
+        <span class="text-muted">
         {{ message.text }}
       </span>
-    </div>
-    <span class="badge badge-primary badge-pill"
-          [class.badge-danger]="message.count > 5">
+      </div>
+      <span class="badge badge-primary badge-pill"
+            [class.badge-danger]="message.count > 5">
       {{ message.count }}
     </span>
-  </li>
-</ul>
-<div class="text-center mt-3">
-  <button class="btn btn-primary">Load more</button>
+    </li>
+  </ul>
+  <div class="text-center mt-3">
+    <button class="btn btn-primary">Load more</button>
+  </div>
+</ng-container>
+<div class="alert alert-dismissible alert-secondary" *ngIf="messages.length === 0">
+  Loading...
 </div>

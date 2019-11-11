@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Observable, of} from 'rxjs';
+import {delay} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +38,6 @@ export class InboxHttpClient {
       subject: 'Your account is active now',
       text: 'Your account is active now...',
       count: 1
-    }]);
+    }]).pipe(delay(1500));
   }
 }
