@@ -10,7 +10,7 @@ import { GDPRModule } from '../gdpr/gdpr.module';
   ],
   imports: [
     BrowserModule,
-    // GDPRModule
+    GDPRModule
   ],
   bootstrap: [AppComponent]
 })

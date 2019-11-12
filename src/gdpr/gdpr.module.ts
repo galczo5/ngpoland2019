@@ -19,12 +19,7 @@ import {GdprModalComponent} from './modal/gdpr-modal.component';
       return (cRef: ComponentRef<any>) => {
         const factory = resolver.resolveComponentFactory(GdprModalComponent);
         const viewContainerRef = cRef.injector.get(ViewContainerRef);
-
-        if (viewContainerRef) {
-          viewContainerRef.createComponent(factory);
-        } else {
-          console.error(`${cRef.componentType.name} has to provide ViewContainerRef for GDPR modal!`);
-        }
+        viewContainerRef.createComponent(factory);
       };
     },
     deps: [ComponentFactoryResolver]
