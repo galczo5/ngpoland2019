@@ -4,6 +4,7 @@ import { NewsComponent } from './news/news.component';
 import { NewsListComponent } from './news-list/news-list.component';
 import {NewsService} from './news.service';
 import {NewsWidgetComponent} from './news-widget/news-widget.component';
+import {take} from 'rxjs/operators';
 
 @NgModule({
   declarations: [NewsComponent, NewsListComponent, NewsWidgetComponent],
@@ -15,10 +16,15 @@ import {NewsWidgetComponent} from './news-widget/news-widget.component';
       multi: true,
       provide: APP_INITIALIZER,
       useFactory: (service: NewsService) => {
-        return () => service.fetch();
+        return () => {
+          service.startFetching();
+          return service.get()
+            .pipe(take(1))
+            .toPromise();
+        };
       },
       deps: [NewsService]
     }
   ]
 })
-export class NewsModule { }
+export class NewsModule {}

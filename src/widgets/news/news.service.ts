@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {NewsHttpClient} from './http/http-client.service';
 import {Observable, ReplaySubject, interval} from 'rxjs';
 import {News} from './news';
-import {switchMap} from 'rxjs/operators';
+import {switchMap, take} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -13,10 +13,9 @@ export class NewsService {
 
   constructor(private httpClient: NewsHttpClient) {}
 
-  fetch(): void {
+  startFetching(): void {
     interval(2000)
       .pipe(
-        // TODO: ApplicationProperties
         switchMap(() => this.httpClient.get(''))
       )
       .subscribe(news => {

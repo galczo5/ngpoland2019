@@ -30,20 +30,21 @@ const platformRef = platformBrowserDynamic([
       return () => {
 
         // Start apps without user settings
-        applicationPropertiesService.get()
-          .subscribe(() => {
+        const applicationProperties$ = applicationPropertiesService.get();
+        applicationProperties$.subscribe(() => {
             platformRef.bootstrapModule(AppModule);
             platformRef.bootstrapModule(HeaderModule);
             platformRef.bootstrapModule(FooterModule);
           });
 
         // Start app with user settings
-        combineLatest(applicationPropertiesService.get(), settingsService.get())
+        combineLatest(applicationProperties$, settingsService.get())
           .subscribe(value => {
             settingsStoreService.setWidget(value[1].enabledWidget);
             platformRef.bootstrapModule(WidgetsModule);
           });
       };
+
     },
     deps: [ApplicationPropertiesService, UserSettingsService, UserSettingsStoreService]
   }

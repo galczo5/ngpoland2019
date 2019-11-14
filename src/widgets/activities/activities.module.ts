@@ -15,7 +15,7 @@ import { ActivityComponent } from './activity/activity.component';
       multi: true,
       provide: APP_INITIALIZER,
       useFactory: (activitiesService: ActivitiesService) => {
-        return () => activitiesService.fetch();
+        return () => activitiesService.startFetching();
       },
       deps: [ActivitiesService]
     }
