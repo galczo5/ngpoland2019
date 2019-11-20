@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import {ApplicationProperties} from './application-properties';
-import {Observable, of} from 'rxjs';
-import {delay} from 'rxjs/operators';
+import { ApplicationProperties } from './application-properties';
+import { Observable, of } from 'rxjs';
+import { delay } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'

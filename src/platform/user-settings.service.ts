@@ -1,8 +1,8 @@
-import {Injectable} from '@angular/core';
-import {UserSettings} from './user-settings';
-import {Observable, of} from 'rxjs';
-import {delay} from 'rxjs/operators';
-import {Widget} from './widget';
+import { Injectable } from '@angular/core';
+import { UserSettings } from './user-settings';
+import { Observable, of } from 'rxjs';
+import { delay } from 'rxjs/operators';
+import { Widget } from './widget';
 
 @Injectable()
 export class UserSettingsService {

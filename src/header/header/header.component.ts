@@ -1,5 +1,5 @@
-import {Component, OnInit, ViewContainerRef} from '@angular/core';
-import {UserSettingsModalService} from '../configuration/user-settings-modal.service';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { UserSettingsModalService } from '../configuration/user-settings-modal.service';
 
 @Component({
   selector: 'app-header',

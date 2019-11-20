@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { GDPRModule } from '../gdpr/gdpr.module';
@@ -12,6 +12,10 @@ import { GDPRModule } from '../gdpr/gdpr.module';
     BrowserModule,
     GDPRModule
   ],
+
+
   bootstrap: [AppComponent]
+
+
 })
 export class AppModule { }

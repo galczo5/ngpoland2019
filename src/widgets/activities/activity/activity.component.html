@@ -1,8 +1,11 @@
-<a href="#" class="list-group-item list-group-item-action flex-column align-items-start" [class.active]="active">
+<a href="#" class="list-group-item list-group-item-action flex-column align-items-start"
+   [class.active]="active">
   <div class="d-flex w-100 justify-content-between">
-    <h5 class="mb-1">{{ activity.header }}</h5>
+    <h5 class="mb-1">
+      {{ activity.header }}
+    </h5>
     <small>{{ activity.date | date }}</small>
   </div>
-  <p class="mb-1">{{ activity.text }}</p>
-  <small>{{ activity.subtext }}</small>
+  <p class="mb-1 text-muted">{{ activity.text }}</p>
+  <small class="text-muted">{{ activity.subtext }}</small>
 </a>

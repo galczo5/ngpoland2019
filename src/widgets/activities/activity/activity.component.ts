@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Activity} from '../activity';
+import { Component, Input, OnInit } from '@angular/core';
+import { Activity } from '../activity';
 
 @Component({
   selector: 'app-activity',

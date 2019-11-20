@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import {interval, Observable, ReplaySubject} from 'rxjs';
-import {Activity} from './activity';
-import {ActivitiesHttpClient} from './http/http-client.service';
-import {switchMap} from 'rxjs/operators';
+import { interval, Observable, ReplaySubject } from 'rxjs';
+import { Activity } from './activity';
+import { ActivitiesHttpClient } from './http/http-client.service';
+import { switchMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'

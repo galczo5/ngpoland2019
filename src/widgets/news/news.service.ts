@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import {NewsHttpClient} from './http/http-client.service';
-import {Observable, ReplaySubject, interval} from 'rxjs';
-import {News} from './news';
-import {switchMap, take} from 'rxjs/operators';
+import { NewsHttpClient } from './http/http-client.service';
+import { Observable, ReplaySubject, interval } from 'rxjs';
+import { News } from './news';
+import { switchMap, take } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'

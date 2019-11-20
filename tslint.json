@@ -1,6 +1,10 @@
 {
-  "extends": "tslint:recommended",
+  "extends": [
+    "tslint:recommended",
+    "tslint-eslint-rules"
+  ],
   "rules": {
+    "whitespace": [true, "check-branch", "check-operator", "check-typecast"],
     "array-type": false,
     "arrow-parens": false,
     "deprecation": {
@@ -84,7 +88,12 @@
     "template-banana-in-box": true,
     "template-no-negated-async": true,
     "use-lifecycle-interface": true,
-    "use-pipe-transform-interface": true
+    "use-pipe-transform-interface": true,
+    "object-curly-spacing": true,
+    "array-bracket-spacing": [
+      true,
+      "never"
+    ]
   },
   "rulesDirectory": [
     "codelyzer"

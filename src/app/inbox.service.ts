@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import {Observable} from 'rxjs';
-import {Message} from './message';
-import {InboxHttpClient} from './inbox-http-client.service';
+import { Observable } from 'rxjs';
+import { Message } from './message';
+import { InboxHttpClient } from './inbox-http-client.service';
 
 @Injectable({
   providedIn: 'root'

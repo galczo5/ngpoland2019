@@ -1,5 +1,5 @@
-import {ComponentFactoryResolver, Injectable, Injector, ViewContainerRef} from '@angular/core';
-import {GdprModalComponent} from './modal/gdpr-modal.component';
+import { ComponentFactoryResolver, Injectable, Injector, ViewContainerRef } from '@angular/core';
+import { GdprModalComponent } from './modal/gdpr-modal.component';
 
 @Injectable({
   providedIn: 'root'

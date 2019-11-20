@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
-import {BrowserModule} from '@angular/platform-browser';
-import {ConfigurationModule} from './configuration/configuration.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { ConfigurationModule } from './configuration/configuration.module';
 
 @NgModule({
   imports: [

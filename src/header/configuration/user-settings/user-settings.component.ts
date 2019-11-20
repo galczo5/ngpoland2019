@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {UserSettingsModalService} from '../user-settings-modal.service';
-import {UserSettingsStoreService} from '../../../platform/user-settings-store.service';
-import {Widget} from '../../../platform/widget';
+import { Component, OnInit } from '@angular/core';
+import { UserSettingsModalService } from '../user-settings-modal.service';
+import { UserSettingsStoreService } from '../../../platform/user-settings-store.service';
+import { Widget } from '../../../platform/widget';
 
 @Component({
   selector: 'app-user-settings',

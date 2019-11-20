@@ -1,6 +1,6 @@
-import {Component, OnInit, ViewContainerRef} from '@angular/core';
-import {Message} from './message';
-import {InboxService} from './inbox.service';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { Message } from './message';
+import { InboxService } from './inbox.service';
 
 @Component({
   selector: 'app-root',
